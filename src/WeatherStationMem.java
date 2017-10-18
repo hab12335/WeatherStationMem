@@ -97,12 +97,10 @@ public class WeatherStationMem {
     public void insertAt(double temp, int pos) {
         if (this.atCapacity())
             this.resize();
-        for (int i = counter; i >= pos ; i--) {
-            if (i != pos)
-                samples[i] = samples[i - 1];
-            else
-                samples[i] = temp;
+        for (int i = counter; i > pos ; i--) {
+            samples[i] = samples[i - 1];
         }
+        samples[pos] = temp;
         counter++;
     }
 
