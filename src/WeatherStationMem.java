@@ -37,7 +37,7 @@ public class WeatherStationMem {
     }
 
     public double maximum() {
-        double max = 0;
+        double max = samples[0];
         for (int i = 0; i < counter; i++)
             if (samples[i] > max)
                 max = samples[i];
